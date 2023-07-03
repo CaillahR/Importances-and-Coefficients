@@ -33,6 +33,18 @@ After dropping Item_Type (Linear Regression):
 - In our Linear Regression model, it shows Item_MRP to be the most important to predicting sales prices, instead of Outlet_Type_Supermarket Type 3.
 - Outlet_Type_Supermarket Type 3 has been traded to be the second most important, the more Type 3 supermarkets the better.
 - Outlet_Type_Supermarket Type 1 is shown to be the third important. More of these types of supermarkets have a positive impact on predicting sales.
+
+## Linear Regression SHAP
+
+![image](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/cdbdd860-60aa-4d59-868b-9485435764a0)
+
+- Item_MRP is also, shown as the most important in this graph. Interpretted as the higher the MRP SHAP the more likely the model will predict sales increasing, and the lower is most likely to decrease sales. Because red values are on the right (positive), we can see that the greater the Item_MRP, the more likely the model would predict the Item to sell.
+
+     - Although the blue dots (fewer items with low MRP) are moderately to the left of the 0-line, indicating that the model is only moderately less likely to predict Item_MRP, compared to the big impact of having a large number of Item_MRP's.
+ 
+ - Our model is heavily influenced to predict that the Outlet_Type_Supermarket Type 1 is less likely to increase sales, and the higher the type 1 supermarkets the less likely the model will predict higher sales.
+
+ - The less type 3 supermarkets there are the model is slightly less likely to predict decrease in sales, the more type 3 supermarkets the model will predict heavily on the increase of sales.
       
 ## Random Regression Importances
 
@@ -48,5 +60,13 @@ After dropping Item_Type (Linear Regression):
 
 - Our Feature and Permutation Importance model share Item_MRP at number 1 for being the most important coefficient. However other features have trade places. Instad of Item_Visibility being the second, as we see in Feature Importance, Outlet_Type_Supermarket Type 3 is now the second most important to the target.
 
+![image](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/df507ac0-0c9b-4b76-add3-2f727ab72c23)
 
+- Item_MRP is also, shown as the most important in this graph. Interpretted as the higher the MRP SHAP the more likely the model will predict sales increasing, and the lower is most likely to decrease sales.
+
+     - The blue dots (fewer items with low MRP) are somewhat severely to the left of the 0-line, indicating that the model is only somewhat severely less likely to predict Item_MRP.
+ 
+ - Our model is most likely to predict that the Outlet_Type_Supermarket Type 1 is moderately unlikely to increase sales, and the higher the type 1 supermarkets the less likely the model will predict higher sales.
+
+ - The less type 3 supermarkets there are the model is slightly less likely to predict decrease in sales, the more type 3 supermarkets the model will predict heavily on the increase of sales.
 
