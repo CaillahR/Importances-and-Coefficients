@@ -70,3 +70,75 @@ After dropping Item_Type (Linear Regression):
 
  - The less type 3 supermarkets there are the model is slightly less likely to predict decrease in sales, the more type 3 supermarkets the model will predict heavily on the increase of sales.
 
+
+# LIME Tubular explanation
+
+## Random Regression
+
+![random_reg_LIME1](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/fa5f27ae-5b10-4eb3-9187-b1675e7ff5bd)
+
+- This store from our low-MRP group had a very high probability of high sales.
+- While this store has an even number of features that were associated with positive sale predictions:
+    - Item_MRP = >190.69 rupies
+    - Outlet_Type_Supermarket Type 1 = 1 (yes)
+    - Item_Visibility = <= 0.03
+
+- Three of the top 5 most impactful features were associated with negative sales predictions:
+    - Outlet_Type_Supermarket 3 = 0 (no)
+    - Outlet_Size_Medium = 0 (no)
+    - Outlet_Type_Supermarket Type 2 = 0 (no)
+    
+- Becasue this store is not a Type 2 or 3, and not a size medium store this will affect the sales negatively.
+- Predicted sales: 5217.01 rupies
+
+![random_reg_LIME2](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/22ce28d2-d34c-46b9-a9f5-cfc64d95ab6c)
+
+- This store from our low-MRP group had a very high probability of low sales.
+- While this store has an even number of features that were associated with positive sale predictions:
+    - Outlet_Type_Supermarket 1 = 1 (yes)
+    - Outlet_Size_Small = 1 (yes), also >0
+    - Item_Fat_Content_Regular = 1 (yes), also >0
+    - Outlet_Size_MISSING = 0 (no), known size
+    - Outlet_Location_Type_Tier 2 = 1 (yes)
+
+- Four of the top 5 most impactful features were associated with negative sales predictions:
+    - Outlet_Type_Supermarket 3 = 0 (no)
+    - Item_MRP = 32.06 rupies
+    - Outlet_Type_Supermarket 2 = 0 (no)
+    - Outlet_Size_Medium = 0 (no)
+    
+- Becasue this store is in a Tier 3 location, not a medium size location, no Type 2 and 3 supermarket, and a low Item_MRP this will affect the sales negatively.
+- Predicted sales: 788.11 rupies
+
+![Linear_reg_LIME1 (1)](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/61dd6934-7346-40bf-bd55-042e2e3781fc)
+
+- This store from our high-MRP group had a high probability of sales.
+- While this store has a few number of features that were associated with positive sale predictions:
+    - Outlet_Type_Supermarket Type 1 = 1 (yes)
+    - Item_MRP = >190.69
+    - Outlet_Location_Type_Tier 2 = 1 (yes)
+
+- Two of the top 5 most impactful features were associated with negative sales predictions:
+    - Outlet_Type_Supermarket Type 3 = 0 (no)
+    - Outlet_Type_Supermarket Type 2 = 0 (no)
+    
+- Because this store is not a Type 3 or Type 2 supermarket  this will affect the sales negatively.
+- Predicted sales: 4227.53 rupies
+
+![Linear_reg_LIME2](https://github.com/CaillahR/Importances-and-Coefficients/assets/121994185/06d5027f-fc58-459c-9202-b2064d8e2a5f)
+
+- This store from our high-MRP group had a high probability of very low sales.
+- While this store has a few number of features that were associated with positive sale predictions:
+    - Outlet_Type_Supermarket Type 1 = 1 (yes)
+    - Outlet_Location_Type_Tier 2 = 1 (yes)
+    - Item_Fat_Content_Regular = 1 (yes)
+    - Outlet_Size_MISSING = 0 (no)
+    
+- Three of the top 5 most impactful features were associated with negative sales predictions:
+    - Outlet_Type_Supermarket Type 3 = 0 (no)
+    - Item_MRP = <= 98.21
+    - Outlet_Type_Supermarket Type 2 = 0 (no)
+    
+- Because this store is not a Type 3 or Type 2 supermarket and has a low Item_MRP of 32.06 this will affect the sales negatively.
+- Predicted sales: 680.65 rupies
+
